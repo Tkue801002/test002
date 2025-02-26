@@ -4,16 +4,25 @@
   "description": "簡單的留言板系統",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "dependencies": {
-    "body-parser": "^1.20.3",
-    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "morgan": "^1.10.0",
     "mysql2": "^2.3.3",
+    "compression": "^1.7.4",
+    "helmet": "^6.0.0",
+    "cors": "^2.8.5",
+    "morgan": "^1.10.0",
+    "body-parser": "^1.20.2",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }

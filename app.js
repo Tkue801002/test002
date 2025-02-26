@@ -1,7 +1,21 @@
 require('dotenv').config();
 const express = require('express');
 const mysql = require('mysql2');
+const helmet = require('helmet');
+const compression = require('compression');
+const cors = require('cors');
+const morgan = require('morgan');
+const bodyParser = require('body-parser');
+const path = require('path');
 const app = express();
+
+// 加入中間件
+app.use(cors());
+app.use(morgan('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(helmet());
+app.use(compression());
 
 // 設定資料庫連線
 const connection = mysql.createConnection({
@@ -75,6 +89,7 @@ app.use((err, req, res, next) => {
 });
 
 // 啟動伺服器
-app.listen(3000, () => {
-  console.log('伺服器運行在 http://localhost:3000');
+const PORT = process.env.PORT;
+app.listen(PORT, () => {
+  console.log(`伺服器運行在 port ${PORT}`);
 });
