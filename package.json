@@ -7,9 +7,9 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "^4.17.1",
-    "mysql2": "^2.3.3",
+    "dotenv": "^16.0.3",
     "ejs": "^3.1.6",
-    "dotenv": "^16.0.3"
+    "express": "^4.17.1",
+    "mysql2": "^2.3.3"
   }
 }
