@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>留言板</title>
+    <style>
+        body { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .message { border: 1px solid #ddd; margin: 10px 0; padding: 10px; }
+        .delete-form { display: inline; }
+        .delete-button { color: red; background: none; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>留言板</h1>
+
+    <form action="/messages" method="POST">
+        <textarea name="content" rows="4" cols="50" required></textarea>
+        <br>
+        <button type="submit">發布留言</button>
+    </form>
+
+    <h2>所有留言</h2>
+    <% messages.forEach(function(message) { %>
+        <div class="message">
+            <p><%= message.content %></p>
+            <small>發布時間：<%= message.created_at %></small>
+            <form class="delete-form" action="/messages/delete/<%= message.id %>" method="POST">
+                <button class="delete-button" type="submit">刪除</button>
+            </form>
+        </div>
+    <% }); %>
+</body>
+</html>

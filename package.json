@@ -1,0 +1,15 @@
+{
+  "name": "message-board",
+  "version": "1.0.0",
+  "description": "簡單的留言板系統",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.3.3",
+    "ejs": "^3.1.6",
+    "dotenv": "^16.0.3"
+  }
+}
